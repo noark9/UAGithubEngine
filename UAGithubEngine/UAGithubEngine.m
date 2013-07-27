@@ -1698,5 +1698,12 @@
    
 }
 
+#pragma mark -
+#pragma mark Starting
+#pragma mark -
+- (void)starringRepositorsWithSuccess:(UAGithubEngineSuccessBlock)successBlock failure:(UAGithubEngineFailureBlock)failureBlock
+{
+    [self invoke:^(id self){[self sendRequest:@"user/stared" requestType:UAGithubRepositoriesRequest responseType:UAGithubRepositoriesResponse error:nil];} success:successBlock failure:failureBlock];
+}
 
 @end
